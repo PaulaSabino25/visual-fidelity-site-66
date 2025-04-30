@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 
@@ -16,10 +16,10 @@ const Header = () => {
         </Link>
 
         <nav className="hidden md:flex space-x-8">
-          <Link to="/about" className="text-[#1A3654] hover:text-opacity-80 transition">ABOUT US</Link>
+          <Link to="/team" className="text-[#1A3654] hover:text-opacity-80 transition">ABOUT US</Link>
           <Link to="/products" className="text-[#1A3654] hover:text-opacity-80 transition">PRODUCTS</Link>
           <Link to="/technology" className="text-[#1A3654] hover:text-opacity-80 transition">PETSYS TECHNOLOGY</Link>
-          <Link to="/news" className="text-[#1A3654] hover:text-opacity-80 transition">NEWS</Link>
+          <Link to="/track-record" className="text-[#1A3654] hover:text-opacity-80 transition">NEWS</Link>
           <Link to="/contact" className="text-[#1A3654] hover:text-opacity-80 transition">CONTACT</Link>
         </nav>
 

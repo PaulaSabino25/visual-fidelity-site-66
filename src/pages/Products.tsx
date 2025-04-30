@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom';
 const ProductCard = ({ 
   image, 
   title, 
-  subtitle = null 
+  subtitle = null,
+  link
 }: { 
   image: string; 
   title: string; 
-  subtitle?: string | null 
+  subtitle?: string | null;
+  link: string;
 }) => {
   return (
     <div className="bg-gray-100 rounded-lg overflow-hidden">
@@ -22,7 +24,7 @@ const ProductCard = ({
       </div>
       <div className="flex justify-end p-2">
         <Link 
-          to={`/products/${title.toLowerCase().replace(/\s+/g, '-')}`} 
+          to={link} 
           className="bg-gray-300 p-2 rounded-full hover:bg-gray-400 transition"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,34 +46,40 @@ const Products = () => {
           <ProductCard 
             image="/lovable-uploads/7dbb3ab3-18f9-49a9-a82c-88b8aab2f622.png" 
             title="PETsys TOFPET2 ASIC" 
+            link="/products/tofpet2-asic"
           />
           
           <ProductCard 
             image="/lovable-uploads/b5f75b92-2247-4cc7-b342-d1f80dd547d5.png" 
             title="PETsys TOF ASIC E.KIT" 
+            link="/products/tof-asic-e-kit"
           />
           
           <ProductCard 
             image="/lovable-uploads/a401f205-ed76-473c-9a19-a149b1df737f.png" 
             title="PETsys TOF Front-End Module" 
             subtitle="(Readout System)" 
+            link="/products/tof-front-end-module"
           />
 
           <ProductCard 
             image="/lovable-uploads/4a49022d-35e0-4f26-a771-1632de142394.png" 
             title="PETsys TOF FEB / D Board" 
             subtitle="(Readout System)" 
+            link="/products/tof-febd-board"
           />
 
           <ProductCard 
             image="/lovable-uploads/3e9260b9-c71e-4256-ad2b-d83e221c095a.png" 
             title="PETsys TOF DAQ Board" 
             subtitle="(Readout System)" 
+            link="/products/tof-daq-board"
           />
 
           <ProductCard 
             image="/lovable-uploads/2505f83d-3905-40ff-873a-21e3db665630.png" 
             title="PETsys SiPM Readout System" 
+            link="#"
           />
         </div>
         
