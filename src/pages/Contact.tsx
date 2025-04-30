@@ -5,12 +5,22 @@ import PageHeading from '../components/PageHeading';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
     <WavyBackground>
       <div className="container mx-auto px-4 py-12">
         <PageHeading title="Contact" />
+        
+        <div className="mb-8 flex justify-end">
+          <Link 
+            to="/gallery"
+            className="bg-[#1A3140] hover:bg-[#2a4658] text-white py-2 px-4 rounded-md transition-colors inline-flex items-center gap-2"
+          >
+            View Image Gallery
+          </Link>
+        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>

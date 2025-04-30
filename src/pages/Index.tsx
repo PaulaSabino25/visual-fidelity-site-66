@@ -1,3 +1,4 @@
+
 import React from 'react';
 import WavyBackground from '../components/WavyBackground';
 import PageHeading from '../components/PageHeading';
@@ -28,6 +29,14 @@ const Index = () => {
                   className="bg-white border border-[#1A3140] text-[#1A3140] py-3 px-6 rounded-md hover:bg-gray-100 transition-colors"
                 >
                   Learn About Technology
+                </Link>
+              </div>
+              <div className="mt-4">
+                <Link 
+                  to="/gallery" 
+                  className="text-[#1A3140] hover:underline inline-flex items-center gap-1"
+                >
+                  View Image Gallery
                 </Link>
               </div>
             </div>

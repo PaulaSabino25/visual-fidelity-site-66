@@ -18,6 +18,7 @@ import Publications from './pages/Publications';
 import TrackRecord from './pages/TrackRecord';
 import SignIn from './pages/SignIn';
 import NotFound from './pages/NotFound';
+import Gallery from './pages/Gallery';
 import './App.css';
 
 // Product pages
@@ -56,6 +57,7 @@ function App() {
             
             <Route path="/news" element={<News />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
             
             <Route path="/signin" element={<SignIn />} />
             
