@@ -1,60 +1,100 @@
 
 import React from 'react';
+import WavyBackground from '../components/WavyBackground';
+import PageHeading from '../components/PageHeading';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex-grow">
-        <div className="relative">
-          <img 
-            src="/lovable-uploads/c8983552-19ba-4543-bcdd-42b40d147150.png" 
-            alt="PETsys Laboratory" 
-            className="w-full h-auto object-cover max-h-[70vh]" 
-          />
-          
-          {/* White overlay with contact info */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white bg-opacity-95 rounded-r-full p-8 md:p-12 max-w-xl">
-            <h2 className="text-2xl font-medium text-[#1A3654] mb-4">TAGUSPARK</h2>
-            <p className="text-[#1A3654] mb-2">Lisboa Science and Technology Park</p>
-            <p className="text-[#1A3654] mb-6">Ed. Tecnologia 3.2, n.61-64</p>
-            
-            <p className="text-[#1A3654] mb-6">2740-257 Porto Salvo</p>
-            
-            <p className="text-[#1A3654] mb-4">Oeiras, Portugal, European Union</p>
-            
-            <div className="flex items-center mb-3">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-3">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="#1A3654" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <a href="tel:+351966002882" className="text-[#1A3654]">(+351) 96 600 2882</a>
+    <WavyBackground>
+      <div className="container mx-auto px-4 py-12">
+        <PageHeading title="Contact" />
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+              <h3 className="text-xl font-semibold text-[#1A3140] mb-4">Address</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>Taguspark,</p>
+                <p>Ed. Tecnologia, 3.2 n.61-64,</p>
+                <p>2740-257 Porto Salvo</p>
+                <p>Oeiras, Portugal, European Union</p>
+              </div>
             </div>
             
-            <div className="flex items-center mb-3">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-3">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#1A3654" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <polyline points="22,6 12,13 2,6" stroke="#1A3654" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <a href="mailto:info@petsyselectronics.com" className="text-[#1A3654]">info@petsyselectronics.com</a>
-            </div>
-            
-            <div className="flex items-center mb-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-3">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#1A3654" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <polyline points="22,6 12,13 2,6" stroke="#1A3654" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <a href="mailto:support@petsyselectronics.com" className="text-[#1A3654]">support@petsyselectronics.com</a>
-            </div>
-            
-            <p className="text-[#1A3654] italic text-sm">please send product id, s/n, photos,...</p>
-            
-            <div className="mt-6">
-              <p className="text-[#1A3654] mb-2">NIF / VAT Number: 510 861 679</p>
-              <p className="text-[#1A3654]">GPS: 38.742751, -9.302342</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="text-xl font-semibold text-[#1A3140] mb-4">Contact Information</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>info@petsyselectronics.com</p>
+                <p>support@petsyselectronics.com</p>
+                <p>(+351) 966 002 882</p>
+              </div>
             </div>
           </div>
+          
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+            <h3 className="text-xl font-semibold text-[#1A3140] mb-6">Send us a message</h3>
+            
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="first-name" className="text-sm font-medium text-gray-700">
+                    First Name
+                  </label>
+                  <Input id="first-name" placeholder="John" />
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="last-name" className="text-sm font-medium text-gray-700">
+                    Last Name
+                  </label>
+                  <Input id="last-name" placeholder="Doe" />
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                  Email
+                </label>
+                <Input id="email" type="email" placeholder="john.doe@example.com" />
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                  Subject
+                </label>
+                <Input id="subject" placeholder="How can we help you?" />
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium text-gray-700">
+                  Message
+                </label>
+                <Textarea id="message" rows={5} placeholder="Write your message here..." />
+              </div>
+              
+              <Button type="submit" className="w-full bg-[#1A3140] hover:bg-[#2a4658]">
+                Send Message
+              </Button>
+            </form>
+          </div>
+        </div>
+        
+        <div className="mt-12">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12447.175039488286!2d-9.311444385345362!3d38.73678106000325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecd2cbfd8fe55%3A0x32733a423931c142!2sTaguspark!5e0!3m2!1sen!2spt!4v1656424963416!5m2!1sen!2spt" 
+            width="100%" 
+            height="450" 
+            style={{ border: 0, borderRadius: '0.5rem' }} 
+            allowFullScreen 
+            loading="lazy"
+            title="PETsys Electronics Location"
+          ></iframe>
         </div>
       </div>
-    </div>
+    </WavyBackground>
   );
 };
 

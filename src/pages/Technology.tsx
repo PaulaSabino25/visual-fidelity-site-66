@@ -1,111 +1,124 @@
 
 import React from 'react';
+import WavyBackground from '../components/WavyBackground';
+import PageHeading from '../components/PageHeading';
+import AccordionSection from '../components/AccordionSection';
+import { Link } from 'react-router-dom';
 
 const Technology = () => {
   return (
-    <div className="min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-medium text-[#1A3654] mb-12">PETsys Technology</h1>
+    <WavyBackground>
+      <div className="container mx-auto px-4 py-12">
+        <PageHeading title="PETsys Technology" />
         
-        <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-2xl font-medium text-[#1A3654] mb-6">Innovative Solutions</h2>
-              <p className="text-gray-700 mb-6">
-                PETsys Electronics offers state-of-the-art solutions for PET imaging applications. Our products provide superior time-of-flight (TOF) resolution and spatial precision for next-generation medical imaging systems.
-              </p>
-              <p className="text-gray-700 mb-6">
-                Our core technology is based on advanced ASICs (Application-Specific Integrated Circuits) designed specifically for high-resolution PET imaging. These ASICs enable unprecedented timing resolution and signal-to-noise ratio, resulting in clearer and more accurate images.
-              </p>
+        <div className="mb-12">
+          <Link 
+            to="/technology/innovative-solutions" 
+            className="block mb-8"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-[#1A3140] mb-4">
+                  Innovative Solutions
+                </h3>
+                <p className="text-gray-700">
+                  PETsys technology based on LSO crystals, silicon photo-sensors and integrated electronics allows improving substantially the performance of the PET system. Our SiPM and APD based gamma ray detectors use dedicated highly integrated circuits (ASICs) with low-noise and low-power.
+                </p>
+                <p className="text-gray-700 mt-4">
+                  These ASICs are the key to scalability of PETsys electronics systems to several tens of thousand channels without compromising performance.
+                </p>
+              </div>
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/edf02dbb-e43e-4ef2-9e5f-ec5911fa022b.png" 
+                  alt="Innovative Solutions" 
+                  className="w-full rounded-full"
+                />
+              </div>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <img 
-                src="/lovable-uploads/7dbb3ab3-18f9-49a9-a82c-88b8aab2f622.png" 
-                alt="PETsys TOFPET2 ASIC" 
-                className="w-full h-auto mb-4"
-              />
-              <h3 className="text-xl font-medium text-[#1A3654] mb-2">TOFPET2 ASIC</h3>
-              <p className="text-gray-700">
-                Our flagship technology combines advanced digital architecture with precise analog processing capabilities.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mb-16">
-          <h2 className="text-2xl font-medium text-[#1A3654] mb-6">Application Areas</h2>
+          </Link>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-100 rounded-lg p-6">
-              <h3 className="text-xl font-medium text-[#1A3654] mb-4">Medical Imaging</h3>
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-[#1A3140] mb-4">
+              PET Resolution
+            </h3>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-xl font-medium text-[#1A3140] mb-6">
+                The baseline detector module has a spatial resolution of ~2 mm and the high-resolution option has resolution of ~1 mm (whole-body PET scanners in the market reach not better than 5 mm).
+              </p>
+              <p className="text-gray-700 mb-4">
+                SiPM-based modules achieve a coincidence time resolution (CTR) of 212 ps FWHM. The coincidence time resolution (CTR) in current LYSO is of the order of 1-2 ns (worse than our systems achieve in same conditions (1.5 ns). Our excellent time resolution permits the use of Time-of-Flight (ToF) information to both very sharp and clean PET images.
+              </p>
               <p className="text-gray-700">
-                Our technology enables clearer, more accurate PET scans for improved cancer diagnosis and treatment planning.
+                PETsys electronics technology allows for this improvement at a very moderate cost and with reduced impact on system integration. Our highly integrated electronics keeps the cost per channel low, keeps the system very compact and the power consumption low.
               </p>
             </div>
-            
-            <div className="bg-gray-100 rounded-lg p-6">
-              <h3 className="text-xl font-medium text-[#1A3654] mb-4">LIDAR Applications</h3>
-              <p className="text-gray-700">
-                The TOFLAR ASIC brings high-resolution capabilities to LIDAR systems for autonomous vehicles and robotics.
+          </div>
+          
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-[#1A3140] mb-4">
+              Clinical Trials
+            </h3>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-xl font-medium text-[#1A3140] mb-6">
+                (...) it is essential to know that there are multifocal lesions in order to remove them all when extracting the cancer tumor.
               </p>
-            </div>
-            
-            <div className="bg-gray-100 rounded-lg p-6">
-              <h3 className="text-xl font-medium text-[#1A3654] mb-4">Research & Development</h3>
-              <p className="text-gray-700">
-                Our products provide the precision needed for advanced physics research and medical technology development.
+              <p className="text-gray-700 mb-4">
+                The validation of PETsys technology was accomplished in pre-clinical trials in Hospital Montpelier and ICNAS, Coimbra, with two machines prototype and pre-production. Several cases of carcinomas tumors were identified which are not visible in the whole-body PET images. Medical doctors conducting the clinical trials have presented the results in international scientific conferences. Our ClearPEM technology image in the right side identifies multifocal lesions. Standard whole-body PET image in the left side doesn't.
               </p>
+              <p className="text-gray-700 mb-4">
+                In surgery, it is essential to know that there are multifocal lesions in order to remove them all when extracting the cancer tumor.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div>
+                  <h4 className="font-medium text-center mb-2">Whole-body PET Image</h4>
+                  <div className="bg-white p-4 rounded shadow-sm">
+                    <img 
+                      src="/lovable-uploads/5597df55-f1d4-489b-8561-a751221e739b.png" 
+                      alt="Whole-body PET Image" 
+                      className="mx-auto"
+                    />
+                  </div>
+                  <p className="text-sm text-center mt-2 text-gray-600">Resolution is insufficient to identify multiple focus</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-center mb-2">Clear PEM Image</h4>
+                  <div className="bg-white p-4 rounded shadow-sm">
+                    <img 
+                      src="/lovable-uploads/c2755f7a-fd84-4052-98d1-1dd4cea24021.png" 
+                      alt="Clear PEM Image" 
+                      className="mx-auto"
+                    />
+                  </div>
+                  <p className="text-sm text-center mt-2 text-gray-600">Multifocal lesions are observed, strong impact on surgery planning</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         
-        <div className="mb-16">
-          <h2 className="text-2xl font-medium text-[#1A3654] mb-6">Technical Specifications</h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-200">
-              <thead>
-                <tr>
-                  <th className="py-3 px-4 border-b border-gray-200 bg-gray-100 text-left text-[#1A3654]">Feature</th>
-                  <th className="py-3 px-4 border-b border-gray-200 bg-gray-100 text-left text-[#1A3654]">TOFPET2 ASIC</th>
-                  <th className="py-3 px-4 border-b border-gray-200 bg-gray-100 text-left text-[#1A3654]">TOFLAR ASIC</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="py-2 px-4 border-b border-gray-200">Channels</td>
-                  <td className="py-2 px-4 border-b border-gray-200">64</td>
-                  <td className="py-2 px-4 border-b border-gray-200">32</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b border-gray-200">Time Resolution</td>
-                  <td className="py-2 px-4 border-b border-gray-200">25 ps RMS</td>
-                  <td className="py-2 px-4 border-b border-gray-200">40 ps RMS</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b border-gray-200">Power Consumption</td>
-                  <td className="py-2 px-4 border-b border-gray-200">10 mW/ch</td>
-                  <td className="py-2 px-4 border-b border-gray-200">8 mW/ch</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b border-gray-200">Input Dynamic Range</td>
-                  <td className="py-2 px-4 border-b border-gray-200">1 - 2000 pC</td>
-                  <td className="py-2 px-4 border-b border-gray-200">1 - 1000 pC</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div className="mb-12">
+          <AccordionSection 
+            title="TOFLAR ASIC for LIDAR Applications" 
+            to="/technology/toflar-asic"
+            rounded={false}
+          />
+          
+          <AccordionSection 
+            title="SiPM based Technology with Time-of-Flight capability" 
+            to="/technology/sipm-based"
+            rounded={false}
+          />
+          
+          <AccordionSection 
+            title="APD based technology with Depth-of-Interaction capability" 
+            to="/technology/apd-based"
+            rounded={false}
+          />
         </div>
       </div>
-      
-      {/* Wave Background */}
-      <div className="bg-[#1A3654] h-64 relative -mx-4 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 transform -translate-y-99%">
-          <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" className="fill-[#1A3654]">
-            <path d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,133.3C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-          </svg>
-        </div>
-      </div>
-    </div>
+    </WavyBackground>
   );
 };
 

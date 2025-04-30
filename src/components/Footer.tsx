@@ -3,92 +3,78 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const [email, setEmail] = React.useState('');
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Newsletter subscription for:', email);
-    setEmail('');
-  };
-
   return (
-    <footer className="bg-[#1A3654] text-white pt-20 pb-4 relative">
-      {/* Wave shape at top */}
-      <div className="absolute top-0 left-0 right-0 transform -translate-y-99%">
-        <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" className="fill-[#1A3654]">
-          <path d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,133.3C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-        </svg>
-      </div>
-
+    <footer className="relative bg-[#1A3140] text-white pt-32 pb-8">
+      <div className="absolute top-0 inset-x-0 h-40 bg-white rounded-b-[50%] transform translate-y-[-50%]"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-medium mb-4">ABOUT US</h3>
+            <h3 className="text-sm font-bold mb-4">ABOUT US</h3>
             <ul className="space-y-2">
-              <li><Link to="/about/company" className="text-sm hover:underline">The Company</Link></li>
-              <li><Link to="/about/team" className="text-sm hover:underline">The Team</Link></li>
+              <FooterLink to="/about/company">The Company</FooterLink>
+              <FooterLink to="/about/team">The Team</FooterLink>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-medium mb-4">PETSYS TECHNOLOGY</h3>
+            <h3 className="text-sm font-bold mb-4">PETSYS TECHNOLOGY</h3>
             <ul className="space-y-2">
-              <li><Link to="/technology/solutions" className="text-sm hover:underline">Innovative Solutions</Link></li>
-              <li><Link to="/technology/toflar" className="text-sm hover:underline">TOFLAR ASIC for LIDAR Applications</Link></li>
-              <li><Link to="/technology/sipm" className="text-sm hover:underline">SiPM based Technology</Link></li>
-              <li><Link to="/technology/apd" className="text-sm hover:underline">APD based Technology</Link></li>
+              <FooterLink to="/technology/innovative-solutions">Innovative Solutions</FooterLink>
+              <FooterLink to="/technology/toflar-asic">TOFLAR ASIC for LIDAR Applications</FooterLink>
+              <FooterLink to="/technology/sipm-based">SIPM based Technology</FooterLink>
+              <FooterLink to="/technology/apd-based">APD based Technology</FooterLink>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-medium mb-4">CONTACT</h3>
-            <ul className="space-y-2">
-              <li className="text-sm">Taguspark,</li>
-              <li className="text-sm">Ed. Tecnologia, 3.2 n.61-64,</li>
-              <li className="text-sm">2740-257 Porto Salvo</li>
-              <li className="text-sm">Oeiras, Portugal, European Union</li>
-              <li className="pt-2">
-                <a href="mailto:info@petsyselectronics.com" className="text-sm hover:underline">info@petsyselectronics.com</a>
-              </li>
-              <li>
-                <a href="mailto:support@petsyselectronics.com" className="text-sm hover:underline">support@petsyselectronics.com</a>
-              </li>
-              <li className="text-sm">(+351) 966 002 882</li>
-            </ul>
+            <h3 className="text-sm font-bold mb-4">CONTACT</h3>
+            <div className="space-y-2 text-sm">
+              <p>Taguspark,</p>
+              <p>Ed. Tecnologia, 3.2 n.61-64,</p>
+              <p>2740-257 Porto Salvo</p>
+              <p>Oeiras, Portugal, European Union</p>
+              <p className="mt-4">info@petsyselectronics.com</p>
+              <p>support@petsyselectronics.com</p>
+              <p>(+351) 966 002 882</p>
+            </div>
           </div>
           
           <div>
-            <h3 className="font-medium mb-4">NEWSLETTER</h3>
+            <h3 className="text-sm font-bold mb-4">NEWSLETTER</h3>
             <p className="text-sm mb-4">Lorem ipsum dolor sit amet</p>
-            <form onSubmit={handleNewsletterSubmit} className="flex">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
-                className="flex-grow px-4 py-2 rounded-l text-black focus:outline-none"
-                required
+            <div className="flex">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="bg-white/10 border border-white/20 rounded-l-md text-sm p-2 w-full" 
               />
-              <button 
-                type="submit"
-                className="bg-gray-400 text-white px-4 py-2 rounded-r hover:bg-opacity-90 transition"
-              >
-                SEND
-              </button>
-            </form>
+              <button className="bg-gray-400 text-white rounded-r-md px-4 text-sm">SEND</button>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-600 pt-4 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm mb-2 md:mb-0">© 2024 PETsys Electronics SA | All Rights Reserved</p>
-          <div className="flex space-x-4">
-            <Link to="/privacy" className="text-sm hover:underline">Política de Privacidade</Link>
-            <Link to="/terms" className="text-sm hover:underline">Termos e Condições</Link>
-            <Link to="/complaints" className="text-sm hover:underline">Livro de Reclamações</Link>
+        <div className="mt-16 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs">
+          <p>© 2024 PETsys Electronics SA | All Rights Reserved</p>
+          
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <Link to="/privacy" className="hover:underline">Política de Privacidade</Link>
+            <Link to="/terms" className="hover:underline">Termos e Condições</Link>
+            <Link to="/claims" className="hover:underline">Livro de Reclamações</Link>
           </div>
         </div>
       </div>
     </footer>
+  );
+};
+
+const FooterLink = ({ to, children }: { to: string, children: React.ReactNode }) => {
+  return (
+    <li>
+      <Link to={to} className="text-sm hover:underline">
+        {children}
+      </Link>
+    </li>
   );
 };
 

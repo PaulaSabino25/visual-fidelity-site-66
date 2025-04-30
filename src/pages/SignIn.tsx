@@ -1,76 +1,72 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
 import { Link } from 'react-router-dom';
+import WavyBackground from '../components/WavyBackground';
 
 const SignIn = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Login attempt with:', { email });
-    // This would connect to authentication in a real implementation
-  };
-
   return (
-    <div className="min-h-screen py-16 relative">
-      <div className="container mx-auto px-4">
-        <div className="max-w-md mx-auto">
-          <h1 className="text-2xl md:text-3xl font-medium text-[#1A3654] mb-6 md:mb-12 text-center">
-            This is a restricted page, please login or register to access it.
+    <WavyBackground>
+      <div className="container mx-auto px-4 py-20">
+        <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/lovable-uploads/cd791cf5-26cd-41ea-8dc8-f302f78d20fb.png" 
+              alt="PETsys Electronics Logo" 
+              className="h-12" 
+            />
+          </div>
+          
+          <h1 className="text-2xl font-semibold text-center mb-6 text-[#1A3140]">
+            Sign In
           </h1>
           
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-md">
-            <form onSubmit={handleSubmit}>
-              <div className="mb-6">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-MAIL"
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1A3654] focus:border-transparent"
-                  required
-                />
-              </div>
+          <p className="text-center text-gray-600 mb-6">
+            This is a restricted page, please login or register to access it.
+          </p>
+          
+          <form className="space-y-4">
+            <div>
+              <Input 
+                type="email" 
+                placeholder="E-MAIL" 
+                className="w-full"
+              />
+            </div>
+            
+            <div>
+              <Input 
+                type="password" 
+                placeholder="PASSWORD" 
+                className="w-full"
+              />
+            </div>
+            
+            <div className="flex justify-between">
+              <Button 
+                variant="outline" 
+                className="flex-1 mr-2"
+              >
+                REGISTER
+              </Button>
               
-              <div className="mb-6">
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="PASSWORD"
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1A3654] focus:border-transparent"
-                  required
-                />
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <Link 
-                  to="/register"
-                  className="text-[#1A3654] hover:underline font-medium"
-                >
-                  REGISTER
-                </Link>
-                
-                <button 
-                  type="submit"
-                  className="bg-[#1A3654] text-white px-8 py-2 rounded hover:bg-opacity-90 transition"
-                >
-                  LOGIN
-                </button>
-              </div>
-            </form>
+              <Button 
+                className="flex-1 ml-2 bg-[#1A3140] hover:bg-[#2a4658]"
+              >
+                LOGIN
+              </Button>
+            </div>
+          </form>
+          
+          <div className="mt-6 text-center">
+            <Link to="/forgot-password" className="text-sm text-blue-600 hover:underline">
+              Forgot your password?
+            </Link>
           </div>
         </div>
       </div>
-      
-      {/* Wave Background */}
-      <div className="fixed bottom-0 left-0 w-full z-[-1]">
-        <svg viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" className="fill-[#1A3654]">
-          <path d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,133.3C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-        </svg>
-      </div>
-    </div>
+    </WavyBackground>
   );
 };
 

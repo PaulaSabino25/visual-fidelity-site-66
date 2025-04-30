@@ -1,65 +1,73 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Toaster } from './components/ui/toaster';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// Pages
+import Index from './pages/Index';
+import About from './pages/About';
+import Team from './pages/Team';
+import Investors from './pages/Investors';
+import Products from './pages/Products';
+import Technology from './pages/Technology';
+import News from './pages/News';
+import Contact from './pages/Contact';
+import Partners from './pages/Partners';
+import Publications from './pages/Publications';
+import TrackRecord from './pages/TrackRecord';
+import SignIn from './pages/SignIn';
+import NotFound from './pages/NotFound';
+import './App.css';
 
-import Index from "./pages/Index";
-import Products from "./pages/Products";
-import Contact from "./pages/Contact";
-import Careers from "./pages/Careers";
-import NotFound from "./pages/NotFound";
-import Technology from "./pages/Technology";
+// Product pages
+import ProductTofpetAsic from './pages/products/ProductTofpetAsic';
+import ProductTofAsicEKit from './pages/products/ProductTofAsicEKit';
+import ProductTofFrontEndModule from './pages/products/ProductTofFrontEndModule';
+import ProductTofFebdBoard from './pages/products/ProductTofFebdBoard';
+import ProductTofDaqBoard from './pages/products/ProductTofDaqBoard';
 
-// Product detail pages
-import ProductTofpetAsic from "./pages/products/ProductTofpetAsic";
-import ProductTofAsicEKit from "./pages/products/ProductTofAsicEKit";
-import ProductTofFebdBoard from "./pages/products/ProductTofFebdBoard";
-import ProductTofFrontEndModule from "./pages/products/ProductTofFrontEndModule";
-import ProductTofDaqBoard from "./pages/products/ProductTofDaqBoard";
-import SignIn from "./pages/SignIn";
-import Team from "./pages/Team";
-import TrackRecord from "./pages/TrackRecord";
-
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+function App() {
+  return (
+    <Router>
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <main>
+        
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/technology" element={<Technology />} />
-            <Route path="/track-record" element={<TrackRecord />} />
-            <Route path="/sign-in" element={<SignIn />} />
             
-            {/* Product detail routes */}
-            <Route path="/products/tofpet2-asic" element={<ProductTofpetAsic />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about/team" element={<Team />} />
+            <Route path="/about/investors" element={<Investors />} />
+            <Route path="/track-record" element={<TrackRecord />} />
+            
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/petsys-tofpet2-asic" element={<ProductTofpetAsic />} />
             <Route path="/products/tof-asic-e-kit" element={<ProductTofAsicEKit />} />
-            <Route path="/products/tof-febd-board" element={<ProductTofFebdBoard />} />
             <Route path="/products/tof-front-end-module" element={<ProductTofFrontEndModule />} />
+            <Route path="/products/tof-febd-board" element={<ProductTofFebdBoard />} />
             <Route path="/products/tof-daq-board" element={<ProductTofDaqBoard />} />
             
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/technology" element={<Technology />} />
+            
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/publications" element={<Publications />} />
+            
+            <Route path="/news" element={<News />} />
+            <Route path="/contact" element={<Contact />} />
+            
+            <Route path="/signin" element={<SignIn />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        
         <Footer />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        <Toaster />
+      </div>
+    </Router>
+  );
+}
 
 export default App;
