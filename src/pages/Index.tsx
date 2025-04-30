@@ -1,4 +1,3 @@
-
 import React from 'react';
 import WavyBackground from '../components/WavyBackground';
 import PageHeading from '../components/PageHeading';
@@ -102,7 +101,7 @@ const Index = () => {
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h3 className="text-xl font-semibold text-[#1A3140] mb-4">Whole Body PET Scanners</h3>
               <p className="text-gray-700">
-                The whole-body PET scanners represent a very large market: >1000 scanners per year.
+                The whole-body PET scanners represent a very large market: {'>'}1000 scanners per year.
               </p>
             </div>
           </div>
