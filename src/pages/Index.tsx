@@ -1,4 +1,3 @@
-
 import React from 'react';
 import WavyBackground from '../components/WavyBackground';
 import PageHeading from '../components/PageHeading';
@@ -36,7 +35,7 @@ const Index = () => {
                   to="/gallery" 
                   className="text-[#1A3140] hover:underline inline-flex items-center gap-1"
                 >
-                  View Image Gallery
+                  Ver Galeria de Imagens
                 </Link>
               </div>
             </div>

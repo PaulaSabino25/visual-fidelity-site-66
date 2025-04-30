@@ -8,7 +8,7 @@ const Gallery = () => {
   return (
     <WavyBackground>
       <div className="container mx-auto px-4 py-12">
-        <PageHeading title="Image Gallery" subtitle="All project images available" />
+        <PageHeading title="Galeria de Imagens" subtitle="Todas as imagens do projeto disponíveis" />
         <ImageGallery />
       </div>
     </WavyBackground>

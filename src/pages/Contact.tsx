@@ -18,7 +18,7 @@ const Contact = () => {
             to="/gallery"
             className="bg-[#1A3140] hover:bg-[#2a4658] text-white py-2 px-4 rounded-md transition-colors inline-flex items-center gap-2"
           >
-            View Image Gallery
+            Ver Galeria de Imagens
           </Link>
         </div>
         
