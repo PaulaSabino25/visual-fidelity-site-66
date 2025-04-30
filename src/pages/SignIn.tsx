@@ -4,41 +4,62 @@ import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Login attempt with:', { email });
+    // This would connect to authentication in a real implementation
+  };
+
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen py-16 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto">
-          <h1 className="text-3xl font-medium text-[#1A3654] mb-12 text-center">
+          <h1 className="text-2xl md:text-3xl font-medium text-[#1A3654] mb-6 md:mb-12 text-center">
             This is a restricted page, please login or register to access it.
           </h1>
           
-          <div className="bg-white rounded-lg p-8">
-            <div className="mb-6">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="E-MAIL"
-                className="w-full p-3 border border-gray-300 rounded"
-                required
-              />
-            </div>
-            
-            <div className="flex justify-between items-center">
-              <Link 
-                to="/register"
-                className="text-[#1A3654] hover:underline"
-              >
-                REGISTER
-              </Link>
+          <div className="bg-white rounded-lg p-6 md:p-8 shadow-md">
+            <form onSubmit={handleSubmit}>
+              <div className="mb-6">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="E-MAIL"
+                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1A3654] focus:border-transparent"
+                  required
+                />
+              </div>
               
-              <button 
-                className="bg-gray-400 text-white px-8 py-2 rounded hover:bg-opacity-90 transition"
-              >
-                LOGIN
-              </button>
-            </div>
+              <div className="mb-6">
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="PASSWORD"
+                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1A3654] focus:border-transparent"
+                  required
+                />
+              </div>
+              
+              <div className="flex justify-between items-center">
+                <Link 
+                  to="/register"
+                  className="text-[#1A3654] hover:underline font-medium"
+                >
+                  REGISTER
+                </Link>
+                
+                <button 
+                  type="submit"
+                  className="bg-[#1A3654] text-white px-8 py-2 rounded hover:bg-opacity-90 transition"
+                >
+                  LOGIN
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

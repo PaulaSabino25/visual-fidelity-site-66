@@ -13,6 +13,7 @@ import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
+import Technology from "./pages/Technology";
 
 // Product detail pages
 import ProductTofpetAsic from "./pages/products/ProductTofpetAsic";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/technology" element={<Technology />} />
             <Route path="/track-record" element={<TrackRecord />} />
             <Route path="/sign-in" element={<SignIn />} />
             
